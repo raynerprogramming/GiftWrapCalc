@@ -1,0 +1,36 @@
+<div>
+  <h1 x-large class="sample-content">Your Content Here</h1>
+
+  <hr>
+
+  <div>
+    For hot module reloading run
+    <pre>npm run start:hmr</pre>
+  </div>
+
+  <hr>
+
+  <div>
+    <h4>Local State</h4>
+
+    <form (ngSubmit)="calculateDimensions()" autocomplete="off">
+
+      <input [value]="dimensions.height" (input)="dimensions.height = $event.target.value" autofocus><br>
+      <input [value]="dimensions.depth" (input)="dimensions.depth = $event.target.value" autofocus><br>
+      <input [value]="dimensions.length" (input)="dimensions.length = $event.target.value" autofocus><br>
+      
+      <button>Submit Value</button>
+    </form>
+    <!--
+        <input type="text" [value]="localState.value" (input)="localState.value = $event.target.value" autofocus>
+        Rather than wiring up two-way data-binding ourselves with [value] and (input)
+        we can use Angular's [(ngModel)] syntax
+        <input type="text" name="textInput" [(ngModel)]="localState.value" autofocus>
+      -->
+      <div>{{dimensions.calculated}}</div>
+      <i class="keyboard_arrow_down material-icons">keyboard_arrow_down</i>
+    <pre>this.localState = {{ localState | json }}</pre>
+
+  </div>
+
+</div>
